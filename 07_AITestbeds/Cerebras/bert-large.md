@@ -7,7 +7,7 @@
 
 * Activate PyTorch virtual Environment 
   ```bash
-  source ~/R_2.0.3/venv_cerebras_pt/bin/activate
+  source ~/R_2.1.1/venv_cerebras_pt/bin/activate
   ```
 
 * Replace the config file with the correct configurations file. 

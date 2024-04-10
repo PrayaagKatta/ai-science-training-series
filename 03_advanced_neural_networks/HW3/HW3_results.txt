@@ -1,0 +1,1 @@
+Changed optimizer to Stochastic Gradient Descent with momentum with the same learning rate but he accuracy was lower than the AdamW optimizer. Maybe because it overshot the minima! Results in hw3.out in this folder.

@@ -1,0 +1,86 @@
+
+Lmod is automatically replacing "nvhpc/22.11" with "gcc/12.2.0".
+
+
+Lmod is automatically replacing "PrgEnv-nvhpc/8.3.3" with "PrgEnv-gnu/8.3.3".
+
+
+Due to MODULEPATH changes, the following have been reloaded:
+  1) cray-mpich/8.1.25
+
+
+libgomp: Invalid value for environment variable OMP_NUM_THREADS
+
+libgomp: Invalid value for environment variable OMP_NUM_THREADS
+Truncation was not explicitly activated but `max_length` is provided a specific value, please use `truncation=True` to explicitly truncate examples to max length. Defaulting to 'longest_first' truncation strategy. If you encode pairs of sequences (GLUE-style) with the tokenizer you can select this strategy more precisely by providing a specific strategy to `truncation`.
+Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+/home/prayaagkatta/.conda/envs/groqflow/lib/python3.10/site-packages/transformers/data/datasets/language_modeling.py:53: FutureWarning: This dataset will be removed from the library soon, preprocessing should be handled with the 🤗 Datasets library. You can have a look at this example script for pointers: https://github.com/huggingface/transformers/blob/main/examples/pytorch/language-modeling/run_mlm.py
+  warnings.warn(
+/home/prayaagkatta/.conda/envs/groqflow/lib/python3.10/site-packages/torch/cuda/__init__.py:141: UserWarning: CUDA initialization: The NVIDIA driver on your system is too old (found version 11080). Please update your GPU driver by downloading and installing a new version from the URL: http://www.nvidia.com/Download/index.aspx Alternatively, go to: https://pytorch.org to install a PyTorch version that has been compiled with your version of the CUDA driver. (Triggered internally at ../c10/cuda/CUDAFunctions.cpp:108.)
+  return torch._C._cuda_getDeviceCount() > 0
+/home/prayaagkatta/.conda/envs/groqflow/lib/python3.10/site-packages/accelerate/accelerator.py:436: FutureWarning: Passing the following arguments to `Accelerator` is deprecated and will be removed in version 1.0 of Accelerate: dict_keys(['dispatch_batches', 'split_batches', 'even_batches', 'use_seedable_sampler']). Please pass an `accelerate.DataLoaderConfiguration` instead: 
+dataloader_config = DataLoaderConfiguration(dispatch_batches=None, split_batches=False, even_batches=True, use_seedable_sampler=True)
+  warnings.warn(
+Detected kernel version 5.3.18, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+Traceback (most recent call last):
+  File "/home/prayaagkatta/ai-science-training-series/05_llm_part2/LLM_part02.py", line 725, in <module>
+    losses = estimate_loss()
+  File "/home/prayaagkatta/.conda/envs/groqflow/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+    return func(*args, **kwargs)
+  File "/home/prayaagkatta/ai-science-training-series/05_llm_part2/LLM_part02.py", line 680, in estimate_loss
+    logits, loss = model(X, Y)
+  File "/home/prayaagkatta/.conda/envs/groqflow/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/prayaagkatta/.conda/envs/groqflow/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/prayaagkatta/.conda/envs/groqflow/lib/python3.10/site-packages/transformers/models/gpt2/modeling_gpt2.py", line 1074, in forward
+    transformer_outputs = self.transformer(
+  File "/home/prayaagkatta/.conda/envs/groqflow/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/prayaagkatta/.conda/envs/groqflow/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/prayaagkatta/.conda/envs/groqflow/lib/python3.10/site-packages/transformers/models/gpt2/modeling_gpt2.py", line 794, in forward
+    past_length = past_key_values[0][0].size(-2)
+IndexError: Dimension specified as -2 but tensor has no dimensions
+
+Lmod is automatically replacing "nvhpc/22.11" with "gcc/12.2.0".
+
+
+Lmod is automatically replacing "PrgEnv-nvhpc/8.3.3" with "PrgEnv-gnu/8.3.3".
+
+
+Due to MODULEPATH changes, the following have been reloaded:
+  1) cray-mpich/8.1.25
+
+
+libgomp: Invalid value for environment variable OMP_NUM_THREADS
+
+libgomp: Invalid value for environment variable OMP_NUM_THREADS
+/home/prayaagkatta/.conda/envs/groqflow/lib/python3.10/site-packages/transformers/data/datasets/language_modeling.py:53: FutureWarning: This dataset will be removed from the library soon, preprocessing should be handled with the 🤗 Datasets library. You can have a look at this example script for pointers: https://github.com/huggingface/transformers/blob/main/examples/pytorch/language-modeling/run_mlm.py
+  warnings.warn(
+/home/prayaagkatta/.conda/envs/groqflow/lib/python3.10/site-packages/torch/cuda/__init__.py:141: UserWarning: CUDA initialization: The NVIDIA driver on your system is too old (found version 11080). Please update your GPU driver by downloading and installing a new version from the URL: http://www.nvidia.com/Download/index.aspx Alternatively, go to: https://pytorch.org to install a PyTorch version that has been compiled with your version of the CUDA driver. (Triggered internally at ../c10/cuda/CUDAFunctions.cpp:108.)
+  return torch._C._cuda_getDeviceCount() > 0
+/home/prayaagkatta/.conda/envs/groqflow/lib/python3.10/site-packages/accelerate/accelerator.py:436: FutureWarning: Passing the following arguments to `Accelerator` is deprecated and will be removed in version 1.0 of Accelerate: dict_keys(['dispatch_batches', 'split_batches', 'even_batches', 'use_seedable_sampler']). Please pass an `accelerate.DataLoaderConfiguration` instead: 
+dataloader_config = DataLoaderConfiguration(dispatch_batches=None, split_batches=False, even_batches=True, use_seedable_sampler=True)
+  warnings.warn(
+Detected kernel version 5.3.18, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+Traceback (most recent call last):
+  File "/home/prayaagkatta/ai-science-training-series/05_llm_part2/LLM_part02.py", line 726, in <module>
+    losses = estimate_loss()
+  File "/home/prayaagkatta/.conda/envs/groqflow/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+    return func(*args, **kwargs)
+  File "/home/prayaagkatta/ai-science-training-series/05_llm_part2/LLM_part02.py", line 680, in estimate_loss
+    logits, loss = model(X, Y)
+  File "/home/prayaagkatta/.conda/envs/groqflow/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/prayaagkatta/.conda/envs/groqflow/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/prayaagkatta/.conda/envs/groqflow/lib/python3.10/site-packages/transformers/models/gpt2/modeling_gpt2.py", line 1074, in forward
+    transformer_outputs = self.transformer(
+  File "/home/prayaagkatta/.conda/envs/groqflow/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/prayaagkatta/.conda/envs/groqflow/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/prayaagkatta/.conda/envs/groqflow/lib/python3.10/site-packages/transformers/models/gpt2/modeling_gpt2.py", line 794, in forward
+    past_length = past_key_values[0][0].size(-2)
+IndexError: Dimension specified as -2 but tensor has no dimensions

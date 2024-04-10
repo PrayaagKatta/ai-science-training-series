@@ -1,0 +1,60 @@
+16 ntasks - Duration 819
+8 tasks - Duration 793
+
+I am assuming that this is time in seconds so it did not make sense that the one with 8 tasks took a shorter amount of time. 
+
+16 tasks run - Output exerpt - 
+COMPILE END AT 819
+RUN
+SHELL=/bin/bash
+CONDA_EXE=/home/prayaagkatta/miniconda3/bin/conda
+_CE_M=
+PWD=/home/prayaagkatta/BertLarge
+LOGNAME=prayaagkatta
+CONDA_PREFIX=/home/prayaagkatta/miniconda3
+OPENBLAS_NUM_THREADS=8
+MOTD_SHOWN=pam
+HOME=/home/prayaagkatta
+LANG=en_US.UTF-8
+VIRTUAL_ENV=/opt/sambaflow/apps/nlp/transformers_on_rdu/venv
+CONDA_PROMPT_MODIFIER=(base)
+SSH_CONNECTION=140.221.69.48 39340 140.221.82.5 22
+TERM=xterm-256color
+_CE_CONDA=
+LIBVIRT_DEFAULT_URI=qemu:///system
+USER=prayaagkatta
+CONDA_SHLVL=1
+IBV_FORK_SAFE=1
+SHLVL=2
+SOFTWARE_HOME=/opt
+CONDA_PYTHON_EXE=/home/prayaagkatta/miniconda3/bin/python
+PS1=(venv)
+SSH_CLIENT=140.221.69.48 39340 22
+
+8 tasks run - Output exerpt - 
+COMPILE END AT 793
+RUN
+SHELL=/bin/bash
+CONDA_EXE=/home/prayaagkatta/miniconda3/bin/conda
+_CE_M=
+PWD=/home/prayaagkatta/BertLarge
+LOGNAME=prayaagkatta
+CONDA_PREFIX=/home/prayaagkatta/miniconda3
+OPENBLAS_NUM_THREADS=8
+MOTD_SHOWN=pam
+HOME=/home/prayaagkatta
+LANG=en_US.UTF-8
+VIRTUAL_ENV=/opt/sambaflow/apps/nlp/transformers_on_rdu/venv
+CONDA_PROMPT_MODIFIER=(base)
+SSH_CONNECTION=140.221.69.48 39340 140.221.82.5 22
+TERM=xterm-256color
+_CE_CONDA=
+LIBVIRT_DEFAULT_URI=qemu:///system
+USER=prayaagkatta
+CONDA_SHLVL=1
+IBV_FORK_SAFE=1
+SHLVL=2
+SOFTWARE_HOME=/opt
+CONDA_PYTHON_EXE=/home/prayaagkatta/miniconda3/bin/python
+PS1=(venv)
+SSH_CLIENT=140.221.69.48 39340 22

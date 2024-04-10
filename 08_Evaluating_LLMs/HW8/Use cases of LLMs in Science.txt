@@ -1,0 +1,3 @@
+I can imagine that LLMs would be very useful in compiling data from previous papers that are relevant to your research. It can compile, summarize, etc to help with papers writing or in a general sense of being up to date with current and past research. For summarization I there are many benchmarks to compare against, like HELM or GLUE. For data compilation, it is a more vague and complex case, and will probably need a field expert to evaluate it.
+It could also be tuned to write research papers as well, again which is a complex topic, needing researchers to evaluate it.
+We could also use simulated data to train an emulator and use to it make predictions on upcoming real data, as showcased by Dr. Nesar Ramachandra

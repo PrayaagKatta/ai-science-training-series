@@ -1,0 +1,127 @@
+#
+(poptorch33_env) (base) prayaagkatta@gc-poplar-02:~/graphcore/examples/nlp/bert/pytorch$   /opt/slurm/bin/srun --ipus=4 python3 run_pretraining.py \
+>   --config demo_tiny_128  \
+>   --input-files /software/datasets/graphcore/wikipedia/128/large_wikicorpus_sample.tfrecord
+srun: job 21028 queued and waiting for resources
+srun: job 21028 has been allocated resources
+    Registered metric hook: total_compiling_time with object: <function get_results_for_compile_time at 0x7f61a4f2d700>
+Using config: demo_tiny_128
+[warning] With replication_factor == 1 you may need to set embedding_serialization_factor > 1 for the model to fit
+Building (if necessary) and loading residual_add_inplace_pattern.
+Failed to find compiled extension; rebuilding.
+Failed to find compiled extension; rebuilding.
+------------------- Data Loading Started ------------------
+    Registered metric hook: total_compiling_time with object: <function get_results_for_compile_time at 0x7f78c8942b80>
+    Registered metric hook: total_compiling_time with object: <function get_results_for_compile_time at 0x7f58fd801dc0>
+Data loaded in 11.212395695969462 secs
+-----------------------------------------------------------
+-------------------- Device Allocation --------------------
+Embedding  --> IPU 0
+Encoder 0  --> IPU 1
+Encoder 1  --> IPU 2
+Encoder 2  --> IPU 3
+Pooler     --> IPU 0
+Classifier --> IPU 0
+-----------------------------------------------------------
+---------- Compilation/Loading from Cache Started ---------
+[03:01:58.535] [poptorch:cpp] [warning] [DISPATCHER] Type coerced from Long to Int for tensor id 6
+[03:01:58.536] [poptorch:cpp] [warning] [DISPATCHER] Type coerced from Long to Int for tensor id 7
+[03:01:58.551] [poptorch:cpp] [warning] [DISPATCHER] Type coerced from Long to Int for tensor id 67
+[03:01:58.551] [poptorch:cpp] [warning] [DISPATCHER] Type coerced from Long to Int for tensor id 68
+[03:01:58.551] [poptorch:cpp] [warning] [DISPATCHER] Type coerced from Long to Int for tensor id 69
+[03:01:58.551] [poptorch:cpp] [warning] [DISPATCHER] Type coerced from Long to Int for tensor id 70
+[03:01:58.551] [poptorch:cpp] [warning] [DISPATCHER] Type coerced from Long to Int for tensor id 71
+[03:01:58.551] [poptorch:cpp] [warning] [DISPATCHER] Type coerced from Long to Int for tensor id 72
+[03:01:58.554] [poptorch:cpp] [warning] [DISPATCHER] Tensor (ptr 0x8b56a80) type coerced from Double to Float
+[03:01:58.555] [poptorch:cpp] [warning] [DISPATCHER] Tensor (ptr 0x8b56a80) type coerced from Double to Float
+[03:01:58.572] [poptorch:cpp] [warning] [DISPATCHER] Tensor (ptr 0x9c34800) type coerced from Double to Float
+[03:01:58.589] [poptorch:cpp] [warning] [DISPATCHER] Tensor (ptr 0x9c86e40) type coerced from Double to Float
+[03:01:58.600] [poptorch:cpp] [warning] ...repeated messages suppressed...
+[03:01:58.621] [poptorch:cpp] [warning] [DISPATCHER] Type coerced from Long to Int for tensor id 372
+[03:01:58.621] [poptorch:cpp] [warning] [DISPATCHER] Type coerced from Long to Int for tensor id 373
+[03:01:58.623] [poptorch:cpp] [warning] [DISPATCHER] Type coerced from Long to Int for tensor id 388
+[03:01:58.623] [poptorch:cpp] [warning] [DISPATCHER] Type coerced from Long to Int for tensor id 389
+Graph compilation:   4%|▍         | 4/100 [00:04<01:49]2024-04-10T03:02:04.648523Z PL:POPLIN    2627222.2627222 W: poplin::preplanMatMuls() is deprecated! Use poplin::preplan() instead
+2024-04-10T03:02:05.786668Z PL:POPLIN    2627222.2627222 W: poplin::preplanMatMuls() is deprecated! Use poplin::preplan() instead
+2024-04-10T03:02:06.841073Z PL:POPLIN    2627222.2627222 W: poplin::preplanMatMuls() is deprecated! Use poplin::preplan() instead
+2024-04-10T03:02:07.891633Z PL:POPLIN    2627222.2627222 W: poplin::preplanMatMuls() is deprecated! Use poplin::preplan() instead
+Graph compilation:  73%|███████▎  | 73/100 [00:54<00:19]2024-04-10T03:02:55.137059Z PO:ENGINE   2627222.2627222 W: 1 vertices in the compute set "copy1248_Copy_{Logsoftmax/553/SubMul/Op/Subtract/Out,cls/predictions/decoder/Gemm:MatMulRhsGradOp/1530/matmulGrouped/Conv_1/internal/partialTranspose,fillValue}_to_{cls/predictions/decoder/Gemm:MatMulRhsGradOp/1530/matmulGrouped/Conv_1/actsRearranged,cls/predictions/decoder/Gemm:MatMulRhsGradOp/1530/matmulGrouped/Conv_1/weightsRearranged}/OnTileCopy" are running on a single thread.
+2024-04-10T03:02:55.137116Z PO:ENGINE   2627222.2627222 W:   There are 19451 copy vertices generated over 1472 tiles, where tile 209 has the most vertices with 34.
+2024-04-10T03:02:55.137118Z PO:ENGINE   2627222.2627222 W:   Consider increasing the engine option `opt.maxComputeSetsPerLoweredCopy`.
+Graph compilation: 100%|██████████| 100/100 [01:30<00:00]2024-04-10T03:03:32.750062Z popart:session 2627222.2627222 W: Rng state buffer was not serialized.You did not load poplar Engine.Remember that if you would like to run the model using the model runtime then you have to create your own buffer and callback in your model runtime application for rngStateTensor.
+
+Compiled/Loaded model in 98.01561326114461 secs
+-----------------------------------------------------------
+--------------------- Training Started --------------------
+Step: 149 / 149 - LR: 1.00e-03 - total loss: 7.389 - mlm_loss: 7.008 - nsp_loss: 0.380 - mlm_acc: 0.161 % - nsp_acc: 0.875 %:  99%|█████████▉| 149/150 [00:03<00:00, 45.44it/s, throughput: 754.3 samples/sec]
+-----------------------------------------------------------
+-------------------- Training Metrics ---------------------
+global_batch_size: 16
+device_iterations: 1
+training_steps: 150
+Training time: 3.280 secs
+-----------------------------------------------------------
+
+#########New run    Registered metric hook: total_compiling_time with object: <function get_results_for_compile_time at 0x7fb1ff1fb700>
+Using config: demo_tiny_128
+[warning] With replication_factor == 1 you may need to set embedding_serialization_factor > 1 for the model to fit
+Building (if necessary) and loading residual_add_inplace_pattern.
+------------------- Data Loading Started ------------------
+    Registered metric hook: total_compiling_time with object: <function get_results_for_compile_time at 0x7f69c78b1b80>
+    Registered metric hook: total_compiling_time with object: <function get_results_for_compile_time at 0x7f94336b8dc0>
+Data loaded in 9.57004685467109 secs
+-----------------------------------------------------------
+-------------------- Device Allocation --------------------
+Embedding  --> IPU 0
+Encoder 0  --> IPU 1
+Encoder 1  --> IPU 2
+Encoder 2  --> IPU 3
+Pooler     --> IPU 0
+Classifier --> IPU 0
+-----------------------------------------------------------
+---------- Compilation/Loading from Cache Started ---------
+[03:15:06.988] [poptorch:cpp] [warning] [DISPATCHER] Type coerced from Long to Int for tensor id 6
+[03:15:06.988] [poptorch:cpp] [warning] [DISPATCHER] Type coerced from Long to Int for tensor id 7
+[03:15:06.999] [poptorch:cpp] [warning] [DISPATCHER] Type coerced from Long to Int for tensor id 67
+[03:15:06.999] [poptorch:cpp] [warning] [DISPATCHER] Type coerced from Long to Int for tensor id 68
+[03:15:06.999] [poptorch:cpp] [warning] [DISPATCHER] Type coerced from Long to Int for tensor id 69
+[03:15:06.999] [poptorch:cpp] [warning] [DISPATCHER] Type coerced from Long to Int for tensor id 70
+[03:15:06.999] [poptorch:cpp] [warning] [DISPATCHER] Type coerced from Long to Int for tensor id 71
+[03:15:06.999] [poptorch:cpp] [warning] [DISPATCHER] Type coerced from Long to Int for tensor id 72
+[03:15:07.000] [poptorch:cpp] [warning] [DISPATCHER] Tensor (ptr 0xa73e440) type coerced from Double to Float
+[03:15:07.001] [poptorch:cpp] [warning] [DISPATCHER] Tensor (ptr 0xa73e440) type coerced from Double to Float
+[03:15:07.009] [poptorch:cpp] [warning] [DISPATCHER] Tensor (ptr 0xa792290) type coerced from Double to Float
+[03:15:07.020] [poptorch:cpp] [warning] [DISPATCHER] Tensor (ptr 0xa7e2c30) type coerced from Double to Float
+[03:15:07.031] [poptorch:cpp] [warning] ...repeated messages suppressed...
+[03:15:07.049] [poptorch:cpp] [warning] [DISPATCHER] Type coerced from Long to Int for tensor id 372
+[03:15:07.050] [poptorch:cpp] [warning] [DISPATCHER] Type coerced from Long to Int for tensor id 373
+[03:15:07.051] [poptorch:cpp] [warning] [DISPATCHER] Type coerced from Long to Int for tensor id 388
+[03:15:07.051] [poptorch:cpp] [warning] [DISPATCHER] Type coerced from Long to Int for tensor id 389
+Graph compilation:   4%|▍         | 4/100 [00:04<01:48]2024-04-10T03:15:12.801712Z PL:POPLIN    2636930.2636930 W: poplin::preplanMatMuls() is deprecated! Use poplin::preplan() instead
+2024-04-10T03:15:13.945210Z PL:POPLIN    2636930.2636930 W: poplin::preplanMatMuls() is deprecated! Use poplin::preplan() instead
+2024-04-10T03:15:15.085144Z PL:POPLIN    2636930.2636930 W: poplin::preplanMatMuls() is deprecated! Use poplin::preplan() instead
+2024-04-10T03:15:16.185878Z PL:POPLIN    2636930.2636930 W: poplin::preplanMatMuls() is deprecated! Use poplin::preplan() instead
+Graph compilation:  73%|███████▎  | 73/100 [01:00<00:19]2024-04-10T03:16:09.865605Z PO:ENGINE   2636930.2636930 W: 1 vertices in the compute set "copy1068_Copy_{fillValue,gather_indices/Cast/335/cast,gather_indices/Matmul/340/matmulGrouped/Conv_1/internal/partialTranspose}_to_{gather_indices/Matmul/340/matmulGrouped/Conv_1/actsRearranged,gather_indices/Matmul/340/matmulGrouped/Conv_1/weightsRearranged}/OnTileCopy" are running on a single thread.
+2024-04-10T03:16:09.865662Z PO:ENGINE   2636930.2636930 W:   There are 766 copy vertices generated over 32 tiles, where tile 350 has the most vertices with 54.
+2024-04-10T03:16:09.865664Z PO:ENGINE   2636930.2636930 W:   Consider increasing the engine option `opt.maxComputeSetsPerLoweredCopy`.
+2024-04-10T03:16:09.898855Z PO:ENGINE   2636930.2636930 W: 1 vertices in the compute set "copy1259_Copy_{Logsoftmax/553/SubMul/Op/Subtract/Out,cls/predictions/transform/LayerNorm/Groupnormalization/353/groupNorm/Norm/normalise/gamma/Op/Multiply/Out,fillValue}_to_{cls/predictions/decoder/Gemm:MatMulRhsGradOp/1529/matmulGrouped/Conv_1/actsRearranged,cls/predictions/decoder/Gemm:MatMulRhsGradOp/1529/matmulGrouped/Conv_1/weightsRearranged}/OnTileCopy" are running on a single thread.
+2024-04-10T03:16:09.898885Z PO:ENGINE   2636930.2636930 W:   There are 33743 copy vertices generated over 1472 tiles, where tile 1061 has the most vertices with 43.
+2024-04-10T03:16:09.898887Z PO:ENGINE   2636930.2636930 W:   Consider increasing the engine option `opt.maxComputeSetsPerLoweredCopy`.
+2024-04-10T03:16:09.929226Z PO:ENGINE   2636930.2636930 W: 20 vertices in the compute set "copy70_Copy_bert.embeddings.word_embeddings.weight_to_bert/embeddings/word_embeddings/Embedding/517/inputTemp/sliceable30522x64/sliceable/OnTileCopy" are running on a single thread.
+2024-04-10T03:16:09.929249Z PO:ENGINE   2636930.2636930 W:   There are 17370 copy vertices generated over 64 tiles, where tile 1265 has the most vertices with 471.
+2024-04-10T03:16:09.929251Z PO:ENGINE   2636930.2636930 W:   Consider increasing the engine option `opt.maxComputeSetsPerLoweredCopy`.
+Graph compilation: 100%|██████████| 100/100 [01:38<00:00]2024-04-10T03:16:49.222099Z popart:session 2636930.2636930 W: Rng state buffer was not serialized.You did not load poplar Engine.Remember that if you would like to run the model using the model runtime then you have to create your own buffer and callback in your model runtime application for rngStateTensor.
+
+Compiled/Loaded model in 106.42838645819575 secs
+-----------------------------------------------------------
+--------------------- Training Started --------------------
+Step: 199 / 199 - LR: 3.00e-03 - total loss: 8.111 - mlm_loss: 7.585 - nsp_loss: 0.526 - mlm_acc: 0.030 % - nsp_acc: 0.781 %: 100%|█████████▉| 199/200 [00:05<00:00, 34.80it/s, throughput: 1134.5 samples/sec]
+-----------------------------------------------------------
+-------------------- Training Metrics ---------------------
+global_batch_size: 32
+device_iterations: 1
+training_steps: 200
+Training time: 5.718 secs
+-----------------------------------------------------------
+
+Took almost twice as long with double the batch size with slightly increased number of epochs
